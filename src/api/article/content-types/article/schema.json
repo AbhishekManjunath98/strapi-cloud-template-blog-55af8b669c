@@ -55,18 +55,6 @@
     "metadata": {
       "type": "json",
       "required": false
-    },
-    "publishedAt": {
-      "type": "datetime",
-      "required": false
-    },
-    "createdAt": {
-      "type": "datetime",
-      "required": false
-    },
-    "updatedAt": {
-      "type": "datetime",
-      "required": false
     }
   }
 }
