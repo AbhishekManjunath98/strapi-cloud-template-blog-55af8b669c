@@ -24,10 +24,6 @@
       "type": "richtext",
       "required": true
     },
-    "category": {
-      "type": "string",
-      "required": true
-    },
     "keywords": {
       "type": "text",
       "required": false
@@ -40,21 +36,47 @@
       "type": "integer",
       "required": false
     },
-    "author": {
-      "type": "string",
-      "required": false
-    },
     "qualityScore": {
       "type": "decimal",
       "required": false
     },
-    "status": {
+    "articleStatus": {
       "type": "string",
       "required": false
     },
-    "metadata": {
+    "ntMetadata": {
       "type": "json",
       "required": false
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "inversedBy": "articles"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "articles"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "seo": {
+      "type": "json"
     }
   }
 }
